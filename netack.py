@@ -5,7 +5,7 @@ import netfilterqueue
 from scapy.layers import http
 import time
 
-class Code_Injector:
+class _Code_Injector:
 
     def __init__(self, c):
         self.injection_code = c
@@ -54,7 +54,7 @@ class Code_Injector:
         queue.bind(0, self.process_packet)
         queue.run()
 
-class Sniffer:
+class _Sniffer:
     def __init__(self, interface):
      scapy.sniff(iface=interface, store=False, prn=self.process_sniffed_packet)
 
@@ -78,7 +78,7 @@ class Sniffer:
         if login_info:
             print("\n\n[+] Possible username/password >>" + str(login_info) +"\n\n")
 
-class FakeDownload:
+class _FakeDownload:
 
 
     def __init__(self, f):
@@ -121,7 +121,7 @@ class FakeDownload:
         queue.run()
 
 
-class NetworkScanner:
+class _NetworkScanner:
 
 	def scan(self,ip):
 		arp_request = scapy.ARP(pdst=ip)
@@ -140,7 +140,7 @@ class NetworkScanner:
 		for client in results_list:
 			print(client["ip"] + "\t\t" + client["mac"])
 
-class MAC:
+class _MAC:
 
 	def change_mac(self,interface, new_mac):
 		interface = interface
@@ -172,7 +172,7 @@ class MAC:
 		    print("[-] MAC address did not changed.")
 
 
-class DNSSpoof:
+class _DNSSpoof:
 
 	def __init__(self, t, r):
 		self.target = t
@@ -206,7 +206,7 @@ class DNSSpoof:
 		queue.bind(0, self.process_packet)
 		queue.run()
 
-class ArpSpoof:
+class _ArpSpoof:
 
 	def get_mac(self, ip):
 		arp_request = scapy.ARP(pdst=ip)

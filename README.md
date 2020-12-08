@@ -12,8 +12,6 @@ This package contains the following tools:-
 6.) File Intercepter
 7.) Network Scanner
 
-This package requires some prerequisites(scapy and netfilterqueue) that you can install by executing setup.py file.
-
-To run this package you need to execute __init__.py file.
+This package requires some prerequisites(scapy and netfilterqueue).
 
 //NOTE :- This package will only run in linux and on python 3
